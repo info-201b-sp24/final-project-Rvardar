@@ -9,10 +9,10 @@
 
 library(shiny)
 library(tidyverse)
-library(ggplot)
+library(ggplot2)
 library(stringr)
 
-dataset <- read.csv(dataset.csv)
+dataset <- read.csv("dataset.csv")
 ui<- navbarPage("The Analysis of Spotify Music")
 tabPanel("Introduction")
 fluidPage(
@@ -20,8 +20,7 @@ fluidPage(
     sidebarLayout(
         sidebarPanel(
             tags$h3("Do musical characteristics such as danceability, energy levels, and valence scores correlate to a song's popularity? This question is important because understanding the relationship between various musical aspects and track popularity might provide useful insights into listener tastes and behaviour. To address the question, we will analyze a dataset comprising information on the musical features and popularity ratings of numerous songs. We are concerned with identifying if certain musical genres yield more popular songs since it can shed light on the relationships between music genres and audience preferences, potentially altering business practices and artist strategies. To address this concern, we plan to conduct statistical analyses comparing the popularity of songs in various genres. Consider how certain musicians constantly receive greater popularity scores. This is important because it implies the presence of trends or patterns in the music industry that may inform commercial strategy or artistic decisions. Accordingly, we plan to investigate the features and attributes shared by artists with high popularity scores to better understand their impact on audience reaction.", style= "font-size: 14px; font-weight: normal; line-height:1.5;"),
-            img(src = "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg", height= 175, width=290)
-        ),
+            img(src = "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg", height= 175, width=290),
         mainPanel(
             h3("Our Final Project is based on the Spotify Tracks Dataset by the user maharshipandya. In this dataset, over 114,000 songs were collected and filtered by unique factors such as song name, artist name, popularity, song danceability and energy levels. With these various factors, our group is able to establish questions that have correlating trends from the collected data."),
             tags$h3("Our group found the Spotify data through the Google Datasets search, which can be found here: https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset:", tags$a(href= "https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset", "https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset"),
@@ -39,7 +38,7 @@ Another problem is that this dataset is based on a specific timeframe, and we mu
 For example, the popularity of songs we know is graded from 0 to 100, but we don't know how the figures were computed. These are some challenges and limitations we will have to address with our project.")
         )
     )
-)
+),
 tabPanel(
   "First Chart",
   fluidPage(
@@ -53,12 +52,12 @@ tabPanel(
                       "Danceability:",
                       min= 0,
                       max = 1,
-                      value = 2),
+                      value = .2),
           sliderInput("energy",
                       "Energy:",
                       min = 0,
                       max = 1,
-                      value = 2)
+                      value = .2)
         )
       )
     )
