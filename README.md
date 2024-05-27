@@ -13,10 +13,6 @@ Spring 2024
 
 Spotify Music, Song Danceability, Song Energy
 
-### Abstract
-
-Our main question is - Do musical characteristics such as danceability, energy levels, and valence scores correlate to a song's popularity? This question is important because understanding the relationship between various musical aspects and track popularity might provide useful insights into listener tastes and behaviour. To address the question, we will analyze a dataset comprising information on the musical features and popularity ratings of numerous songs. We are concerned with identifying if certain musical genres yield more popular songs since it can shed light on the relationships between music genres and audience preferences, potentially altering business practices and artist strategies. To address this concern, we plan to conduct statistical analyses comparing the popularity of songs in various genres. Consider how certain musicians constantly receive greater popularity scores. This is important because it implies the presence of trends or patterns in the music industry that may inform commercial strategy or artistic decisions. Accordingly, we plan to investigate the features and attributes shared by artists with high popularity scores to better understand their impact on audience reaction.
-
 ###Dataset Link
 https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset 
 
@@ -28,6 +24,8 @@ For the Final Project -- Data Wrangling, add the following to this code reposito
 
 
 **Link: Link to your Shiny App here**
+
+https://info201-final-rvardar.shinyapps.io/final-project-spotify-music
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
@@ -54,7 +52,7 @@ For our group project, we aim to find the connections within music by exploring 
 
 #Where did you find the data? 
 
-I found data through the Google Datasets search. The website name is huggingface.co. Here is the link -> https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset
+Our group found the Spotify data through the Google Datasets search, which can be found here: https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset .
 
 #Who collected the data? 
 
