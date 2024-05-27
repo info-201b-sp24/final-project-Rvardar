@@ -43,7 +43,7 @@ For example, the popularity of songs we know is graded from 0 to 100, but we don
 tabPanel(
   "First Chart",
   fluidPage(
-    titlePanel("Song Dancaebility Vs Energy"),
+    titlePanel("Song Danceability Vs Energy"),
     sidebarLayout(
       sidebarPanel(
         tags$h3("")
