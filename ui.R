@@ -12,6 +12,8 @@ library(tidyverse)
 library(ggplot)
 library(stringr)
 
+dataset <- read.csv(dataset.csv)
+
 # Define UI for application that draws a histogram
 fluidPage(
 
