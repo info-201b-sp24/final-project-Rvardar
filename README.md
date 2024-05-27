@@ -112,3 +112,11 @@ For example, the popularity of songs we know is graded from 0 to 100, but we don
 
 # Conclusion / Summary Takeaways
 
+
+
+###References
+
+References:
+1.	 Jockims, Trevor Laurence. “How Spotify AI Plans to Know before You Do What Your Brain Wants to Listen To.” CNBC, CNBC, 18 Apr. 2024, www.cnbc.com/2024/04/14/how-spotify-ai-plans-to-know-whats-going-on-inside-your-head.html 
+2.	Fink, Jennifer. “Why — and How — Music Moves Us” Pfizer, 2024, www.pfizer.com/news/articles/why_and_how_music_moves_us#:~:text=Music%20and%20Mood&text=The%20limbic%20system%2C%20which%20is,when%20our%20ears%20perceive%20music.&text=The%20chills%20you%20feel%20when,of%20pleasure%20and%20well%2Dbeing
+3.	Twaddle, Alan. “Listening to This Music Will Make You Happy!” Medium, Medium, 20 Aug. 2021, https://www.medium.com/@twaddlac/listening-to-this-music-will-make-you-happy-751182d8c5cd 
