@@ -16,6 +16,7 @@ ui <- fluidPage(
   # Layout with sidebar and main panel
   sidebarLayout(
     sidebarPanel(
+      helpText("Explore the comparison of popularity between different genres"),
       # Dropdown menu to choose the number of genres to compare (2 to 10)
       selectInput("num_genres", "Number of Genres to Compare", choices = 2:10),
       # Dynamically generated genre selection dropdowns will be placed here
