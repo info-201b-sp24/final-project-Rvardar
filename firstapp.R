@@ -3,7 +3,7 @@ library(shiny)
 library(ggplot2)
 library(dplyr)
 
-# Load your dataset (replace "dataset.csv" with your actual file path)
+# Load your dataset 
 dataset <- read.csv("dataset.csv")
 
 # Define the UI for the Shiny app
@@ -11,6 +11,8 @@ ui <- fluidPage(
   titlePanel("Danceability vs. Energy"),
   sidebarLayout(
     sidebarPanel(
+      helpText("Explore the relationship between danceability and energy in music tracks. 
+                Use the sliders to adjust the desired range for each."),
       sliderInput("dance_min", "Danceability Min", min = min(dataset$danceability), 
                   max = max(dataset$danceability), value = min(dataset$danceability)),
       sliderInput("dance_max", "Danceability Max", min = min(dataset$danceability), 
