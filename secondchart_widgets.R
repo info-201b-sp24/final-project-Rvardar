@@ -4,7 +4,8 @@ library(ggplot2)
 library(readr)
 library(tidyverse)
 
-# Load your dataset (replace "dataset.csv" with your actual file path)
+# Load your dataset 
+
 dataset <- read.csv("dataset.csv")
 
 # Define UI for the Shiny app
@@ -12,8 +13,8 @@ ui <- fluidPage(
   titlePanel("Average & Total Popularity by Genre"),
   sidebarLayout(
     sidebarPanel(
-      selectInput("num_genres", "Number of Genres to Compare", choices = 2:10),  # Allow 2 to 5 genres for comparison
-      uiOutput("genre_select")  # Dynamically generated genre selection dropdowns
+      selectInput("num_genres", "Number of Genres to Compare", choices = 2:10),# Allow 2 to 5 genres for comparison
+      uiOutput("genre_select")# Dynamically generated genre selection dropdowns
     ),
     mainPanel(
       plotOutput("popularity_by_genre")
@@ -36,7 +37,7 @@ server <- function(input, output) {
   output$popularity_by_genre <- renderPlot({
     selected_genres <- lapply(seq_len(input$num_genres), function(i) input[[paste0("genre_", i)]])
     filtered_data <- dataset %>%
-      filter(track_genre %in% selected_genres)  # Filter by selected genres
+      filter(track_genre %in% selected_genres)# Filter by selected genres
     
     avg_popularity <- aggregate(popularity ~ track_genre, data = filtered_data, FUN = mean)
     
@@ -47,9 +48,9 @@ server <- function(input, output) {
     combined_popularity <- left_join(avg_popularity, sum_popularity, by = "track_genre")
     
     ggplot(combined_popularity, aes(y = track_genre, x = popularity)) +
-      geom_bar(stat = "identity", fill = "skyblue", width = 0.7) +
+      geom_bar(stat = "identity", fill = "pink", width = 0.7) +
       geom_text(aes(label = track_genre), position = position_dodge(width = 0.7), vjust = -0.2, color = "black", size = 3) +
-      scale_y_discrete(limits = sort(unique(combined_popularity$track_genre), decreasing = TRUE)) +  # Sort genres alphabetically
+      scale_y_discrete(limits = sort(unique(combined_popularity$track_genre), decreasing = TRUE)) +# Sort genres alphabetically
       theme_minimal() +
       labs(title = "Average and Total Popularity by Genre",
            y = "Genre",
