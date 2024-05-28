@@ -15,7 +15,7 @@ library(stringr)
 dataset <- read.csv("dataset.csv")
 ui<- navbarPage("The Analysis of Spotify Music")
 tabPanel("Introduction")
-fluidPage(
+fluidPage (
     titlePanel("Introduction"),
     sidebarLayout(
         sidebarPanel(
