@@ -6,17 +6,23 @@
 #
 #    https://shiny.posit.co/
 #
-
+install.packages(plotly)
+library(plotly)
 library(shiny)
 library(tidyverse)
-library(ggplot)
+library(ggplot2)
 library(stringr)
 
+dataset<- read.csv("dataset.csv")
 
-# Define server logic required to draw a histogram
-function(input, output, session) {
+final_shiny_upload<- function(input, output) {
+  output$firstchart <- renderPlot({
+    danceability_vs_energy <- dataset
+    plot(dataset$danceability, dataset$energy)})}
 
-    output$distPlot <- renderPlot({
+p<- plotly(danceability_vs_energy, x = "Danceability", y="Energy", color="#20C010")
+  
+      
 
         # generate bins based on input$bins from ui.R
         x    <- faithful[, 2]
