@@ -15,12 +15,14 @@ library(stringr)
 
 dataset<- read.csv("dataset.csv")
 
-final_shiny_upload<- function(input, output) {
-  output$firstchart <- renderPlot({
-    danceability_vs_energy <- dataset
-    plot(dataset$danceability, dataset$energy)})}
+first_chart<- function(input, output) {
+  output$first_chart <- renderTable({
+    ggplot(dataset = dataset, aes_string(x= dataset$danceability, y= dataset$energy, color="#20C010"))+
+      geom_point()
+  })
+  output$correlation <-first_chart
+}
 
-p<- plotly(danceability_vs_energy, x = "Danceability", y="Energy", color="#20C010")
   
       
 
