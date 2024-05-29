@@ -6,20 +6,18 @@
 #
 #    https://shiny.posit.co/
 #
-install.packages(plotly)
-library(plotly)
 library(shiny)
 library(tidyverse)
 library(ggplot2)
 library(stringr)
 
 dataset<- read.csv("dataset.csv")
-
-server <- function(input, output) {
+dataset
+server <- shinyServer(function(input, output) {
   output$dance_vs_energy <- renderPlot({
     filtered_data <- dataset %>%
       filter(danceability >= input$dance_min & danceability <= input$dance_max & energy >= input$energy_min & energy <= input$energy_max)
-    ggplot(filtered_data, aes(x = danceability, y = energy)) +
+    ggplot(filtered_data, aes_string(x = danceability, y = energy)) +
       geom_point() +
       labs(title = "Danceability vs. Energy",
            x = "Danceability", y = "Energy")
@@ -53,19 +51,18 @@ server <- function(input, output) {
       labs(title = "Average and Total Popularity by Genre",
            y = "Genre",
            x = "Popularity")
-    output$histogram <- renderPlot({
-      selected_feature <- input$feature
-      bin_width <- input$binwidth
-      
-      ggplot(dataset, aes_string(x = selected_feature)) +
-        geom_histogram(binwidth = bin_width, fill = "skyblue", color = "black", alpha = 0.7, aes(tooltip = paste(x, ..count.., sep=": "))) +  # Add tooltip aesthetics
-        labs(title = paste("Histogram of", selected_feature),
-             x = selected_feature,
-             y = "Frequency") +
-        theme_minimal()
-    })
   })
-}
+  output$histogram <- renderPlot({
+    selected_feature <- input$feature
+    bin_width <- input$binwidth
+    ggplot(dataset, aes_string(x = selected_feature)) +
+        geom_histogram(binwidth = bin_width, fill = "skyblue", color = "black", alpha = 0.7, aes(tooltip = paste(x, ..count.., sep=": "))) +  # Add tooltip aesthetics
+      labs(title = paste("Histogram of", selected_feature),
+           x = selected_feature,
+           y = "Frequency") +
+      theme_minimal()
+  })
+})
 
   
   

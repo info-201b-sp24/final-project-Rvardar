@@ -8,6 +8,7 @@
 #
 library(shiny)
 library(dplyr)
+library(plotly)
 library(ggplot2)
 library(readr)
 library(tidyverse)
@@ -57,7 +58,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
                       max = max(dataset$energy), value = max(dataset$energy)
           )),
         mainPanel(
-          plotOutput("danceability_vs_energy")
+          plotOutput("dance_vs_energy")
         )
       )
     )
