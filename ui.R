@@ -70,7 +70,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
       sidebarLayout(
         sidebarPanel(
           selectInput("num_genres", "Number of Genres to Compare", choices = 2:10),
-          plotOutput("genre_select")),
+          uiOutput("genre_select")),
         mainPanel(
           plotOutput("popularity_by_genre")
         )
@@ -127,7 +127,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
       )
     )
   )
-  )
+)
 
 
 

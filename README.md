@@ -25,7 +25,7 @@ For the Final Project -- Data Wrangling, add the following to this code reposito
 
 **Link: Link to your Shiny App here**
 
-https://info201-final-rvardar.shinyapps.io/final-project-spotify-music
+ADD SHINY LINK HERE
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
