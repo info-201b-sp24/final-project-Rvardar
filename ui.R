@@ -13,6 +13,7 @@ library(readr)
 library(tidyverse)
 dataset<- read.csv("dataset.csv")
 dataset
+audio_features <- dataset[, c("danceability", "energy", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo")]
 ui<- navbarPage(
   "The Analysis of Spotify Music",
   tabPanel(
@@ -41,6 +42,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
         )
       )
     ),
+  #Chart 1
   tabPanel(
     "Danceability vs. Energy",
     fluidPage(
@@ -61,6 +63,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
       )
     )
   ),
+  #Chart 2
   tabPanel(
     "Average & Total Popularity by Genre",
     fluidPage(
@@ -75,6 +78,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
       )
     )
   ),
+  #Chart 3
   tabPanel(
     "Audio Feature Distribution",
     fluidPage(
