@@ -8,7 +8,6 @@
 #
 library(shiny)
 library(dplyr)
-library(plotly)
 library(ggplot2)
 library(readr)
 library(tidyverse)
@@ -87,22 +86,21 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
             "feature",
             "Select Feature:",
             names("audio_features")
-      ),
-      sliderInput(
-        "binwidth",
-        "Bin Width:",
-        min = 0.01,
-        max = 0.5,
-        value = 0.05,
-        step = 0.01
+          ),
+          sliderInput(
+            "binwidth",
+            "Bin Width:",
+            min = 0.01,
+            max = 0.5,
+            value = 0.05,
+            step = 0.01)
+        ),
+        mainPanel(
+          plotOutput("histogram")
+          )
+        )
       )
-      ),
-      mainPanel(
-        plotOutput("histogram")
-      )
-    )
-    )
-  ),
+    ),
   tabPanel(
     "Conclusion",
     fluidPage(
@@ -133,7 +131,8 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
 
 
 
+
 server<- function(input, output, session){
 }
 
-shinyApp(ui,server)
+shinyApp(ui,server, options = list(height=540))

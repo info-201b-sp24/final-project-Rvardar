@@ -14,13 +14,8 @@ Spring 2024
 Spotify Music, Song Danceability, Song Energy
 
 ###Dataset Link
-https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset 
 
-For the Final Project -- Data Wrangling, add the following to this code repository: 
-
-* An R script file containing the code you used to create your unified dataset 
-* Your unified and cleaned CSV dataset file
-* Data Nutrition Label (pdf) 
+https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset
 
 
 **Link: Link to your Shiny App here**
@@ -136,6 +131,7 @@ The most significant insight from our analysis is the confirmation of a positive
 This exploration has broader implications for the music industry. By recognizing the influence of danceability and energy on popularity, artists and producers can make informed decisions about the direction of their music. Additionally, music streaming services can leverage this knowledge to refine their recommendation algorithms, leading to a more personalized and engaging user experience. Furthermore, policymakers can utilize this information to gain insights into listener preferences and potential biases within music streaming platforms.
 
 In conclusion, our analysis of the Spotify music dataset shed light on the connections between musical characteristics and song popularity. The positive correlation between danceability and energy with popularity offers valuable insights for the music industry, informing creative decisions, recommendation systems, and potentially even music policy. As music continues to evolve, further exploration of these relationships will be crucial for understanding listener preferences and shaping the future of music consumption.
+
 ###References
 
 References:
