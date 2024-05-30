@@ -88,7 +88,7 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
           selectInput(
             "feature",
             "Select Feature:",
-            names("audio_features")
+            names(audio_features)
           ),
           sliderInput(
             "binwidth",
@@ -130,7 +130,4 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
   )
 )
 
-server<- function(input, output, session){
-}
 
-shinyApp(ui,server, options = list(height=540))
