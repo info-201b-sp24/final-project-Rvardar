@@ -13,12 +13,12 @@ Spring 2024
 
 Spotify Music, Song Danceability, Song Energy
 
-###Dataset Link
+### Dataset Link:
 
 https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset
 
 
-**Link: Link to your Shiny App here**
+### Shiny App Link:
 
 https://info201-final-rvardar.shinyapps.io/final-project-Rvardar/
 
