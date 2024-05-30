@@ -13,6 +13,7 @@ library(stringr)
 library(dplyr)
 
 dataset<- read.csv("dataset.csv")
+dataset
 
 server <- function(input, output) {
   #Chart 1  
@@ -24,6 +25,7 @@ server <- function(input, output) {
       labs(title = "Danceability vs. Energy",
            x = "Danceability", y = "Energy")
     })
+  
   #Chart 2
   output$genre_select <- renderUI({
     genre_choices <- unique(dataset$track_genre)
@@ -32,6 +34,7 @@ server <- function(input, output) {
       selectInput(paste0("genre_", i), paste0("Genre ", i), choices = genre_choices)
     })
   })
+  
   output$popularity_by_genre <- renderPlot({
     selected_genres <- lapply(seq_len(input$num_genres), function(i)
       input[[paste0("genre_", i)]])
@@ -42,6 +45,7 @@ server <- function(input, output) {
       group_by(track_genre) %>%
       summarise(total_popularity = sum(popularity))
     combined_popularity <- left_join(avg_popularity, sum_popularity, by = "track_genre")
+    
     ggplot(combined_popularity, aes(y = track_genre, x = popularity)) +
       geom_bar(stat = "identity", fill = "skyblue", width = 0.7) +
       geom_text(aes(label = track_genre), position = position_dodge(width = 0.7), vjust = -0.2, color = "black", size = 3) +

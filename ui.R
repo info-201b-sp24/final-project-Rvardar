@@ -11,8 +11,7 @@ library(dplyr)
 library(ggplot2)
 library(readr)
 library(tidyverse)
-options(encoding = "UTF-8")
-dataset <- read.csv("dataset.csv")
+dataset<- read.csv("dataset.csv")
 dataset
 ui<- navbarPage(
   "The Analysis of Spotify Music",
@@ -126,11 +125,6 @@ This dataset is based on a specific timeframe, and we must match the dataset's i
     )
   )
 )
-
-
-
-
-
 
 server<- function(input, output, session){
 }
